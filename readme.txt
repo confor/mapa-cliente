@@ -13,6 +13,11 @@ de mantener el tamaño del repositorio al mínimo. el resultado debe ser pocos
 archivos estáticos que serán servidos por nginx o apache.
 
 
+como usar
+---------
+ejecutar ./build.sh y la salida estará en dist/, luego copiar al servidor
+
+
 navegador web
 -------------
 esbuild está configurado para mínimo:
