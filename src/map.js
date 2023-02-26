@@ -39,3 +39,5 @@ L.control.locate({
 }).addTo(map);
 
 L.tileLayer('https://{s}.tile.openstreetmap.fr/osmfr/{z}/{x}/{y}.png').addTo(map);
+
+module.exports = map;
