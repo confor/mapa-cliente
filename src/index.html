@@ -1,7 +1,10 @@
 <!DOCTYPE html><html>
 <head>
 	<meta charset="utf-8">
-	<title>aaaaaaa</title>
+	<title>mapa</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link rel="stylesheet" href="https://unpkg.com/bulma@0.9.4/css/bulma.min.css" integrity="sha256-rTpdO0HXBCNpreAHcu6tB2Ppg515Vo+5GtYSsnNLz+8=" crossorigin="" />
 	<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css" integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI=" crossorigin="" />
 	<link rel="stylesheet" href="https://unpkg.com/leaflet.locatecontrol@0.79.0/dist/L.Control.Locate.min.css" integrity="sha256-b1FUshftUDgzY/VtFMamPDs0o3GER52S9Tk8IK+wOoE=" crossorigin="">
 
@@ -16,11 +19,56 @@
 			min-height: 100vh;
 			margin: 0;
 		}
+
+		#map-buttons {
+			z-index: 1000;
+			width: 100%;
+			position: absolute;
+			bottom: 0;
+			text-align: center;
+		}
+
+		#map-buttons-container {
+			background: white;
+			display: inline-block;
+			border-radius: 1em;
+			padding: 0.75em;
+			margin-bottom: 1em;
+		}
+
+		#map-buttons-container .button {
+			margin-right: 1em;
+		}
+
+		#map-buttons-container .button:last-child {
+			margin-right: 0;
+		}
+
 	</style>
 </head>
 <body>
 	<div id="map">
 		<div id="leaflet"></div>
+
+		<div id="map-buttons">
+			<div id="map-buttons-container" class="is-rounded">
+				<button class="button is-dark is-inverted js-modal-trigger" data-target="modal-search">
+					<svg xmlns="http://www.w3.org/2000/svg" class="icon" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+						<path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+						<circle cx="10" cy="10" r="7" />
+						<line x1="21" y1="21" x2="15" y2="15" />
+					</svg>
+				</button>
+
+				<button class="button is-dark is-inverted js-modal-trigger" data-target="modal-write">
+					<svg xmlns="http://www.w3.org/2000/svg" class="icon" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+						<path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+						<path d="M4 20h4l10.5 -10.5a1.5 1.5 0 0 0 -4 -4l-10.5 10.5v4" />
+						<line x1="13.5" y1="6.5" x2="17.5" y2="10.5" />
+					</svg>
+				</button>
+			</div>
+		</div>
 	</div>
 
 	<script src="/build.js"></script>
