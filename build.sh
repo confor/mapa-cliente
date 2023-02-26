@@ -1,3 +1,5 @@
+#!/usr/bin/bash
+set -eu
 mkdir -p dist
 cp src/index.html dist/index.html
-esbuild src/index.js --outfile=dist/index.js --bundle --minify --target=chrome,firefox,safari,edge
+esbuild src/script.js --outfile=dist/build.js --bundle --minify --target=chrome62,edge16,safari11,firefox56
